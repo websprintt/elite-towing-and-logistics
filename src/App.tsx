@@ -410,7 +410,7 @@ export default function App() {
                   <div className="lg:col-span-5 relative">
                     <div className="relative rounded-xl overflow-hidden shadow-md border-2 border-slate-800 bg-slate-950 aspect-[4/3] group">
                       <img 
-                        src="/src/assets/images/tow_truck_hero_16_9_1779351995179.png" 
+                        src="https://raw.githubusercontent.com/websprintt/elite-towing-and-logistics/src/assets/images/tow_truck_hero_16_9_1779351995179.png" 
                         alt="Elite Towing S. Florida flatbed heavy rescue car trailer truck"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         referrerPolicy="no-referrer"
@@ -910,7 +910,7 @@ export default function App() {
                     <div className="lg:col-span-5 relative">
                       <div className="aspect-square bg-slate-900 rounded-xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 shadow-md group">
                         <img 
-                          src="/src/assets/images/towing_team_trust_1779352138201.png" 
+                          src="https://raw.githubusercontent.com/websprintt/elite-towing-and-logistics/src/assets/images/towing_team_trust_1779352138201.png" 
                           alt="Leonardo Elite Towing family team owner and dispatcher truck"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           referrerPolicy="no-referrer"
