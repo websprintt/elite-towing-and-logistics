@@ -1,0 +1,6 @@
+{
+  "name": "Elite Towing & Logistics",
+  "description": "24/7 Fast & Reliable Towing Services in South Florida. Serving Lehigh Acres, Cape Coral, Fort Myers, Miami-Dade, and Broward County.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
