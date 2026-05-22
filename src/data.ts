@@ -1,0 +1,422 @@
+import { Review, Service, FAQItem, RegionSEO } from './types';
+
+export const REVIEWS: Review[] = [
+  {
+    id: 'rev-1',
+    author: 'Julie Ali',
+    rating: 5,
+    text_en: 'Leonardo arrived within minutes in Cape Coral and took amazing care of my vehicle. Safe, friendly, and very honest. Best towing service I’ve experienced in South Florida!',
+    text_es: 'Leonardo llegó en cuestión de minutos a Cape Coral y cuidó muchísimo mi vehículo. Seguro, amable y muy honesto. ¡El mejor servicio de grúa que he experimentado en el sur de Florida!',
+    location_en: 'Cape Coral, FL',
+    location_es: 'Cape Coral, FL',
+    tag: 'speed',
+    date: '2 weeks ago'
+  },
+  {
+    id: 'rev-2',
+    author: 'Aaron George',
+    rating: 5,
+    text_en: 'We have used Elite Towing & Logistics for our construction equipment transport for over 2 years now. Safe, professional, punctual, and pricing is always upfront. Absolutely the best.',
+    text_es: 'Hemos utilizado a Elite Towing & Logistics para el transporte de nuestros equipos de construcción por más de 2 años. Seguro, profesional, puntual y los precios siempre son claros. Absolutamente los mejores.',
+    location_en: 'Fort Myers, FL',
+    location_es: 'Fort Myers, FL',
+    tag: 'professional',
+    date: '1 month ago'
+  },
+  {
+    id: 'rev-3',
+    author: 'Michel Rodríguez',
+    rating: 5,
+    text_en: 'Servicio excelente, rápido y muy profesional. I was stuck on the I-95 in Miami late at night. They arrived in less than 20 minutes and spoke perfect English and Spanish. Total lifesavers!',
+    text_es: 'Servicio excelente, rápido y muy profesional. Me quedé varado en la I-95 en Miami tarde por la noche. Llegaron en menos de 20 minutos y hablaron perfecto inglés y español. ¡Verdaderos salvavidas!',
+    location_en: 'Miami, FL',
+    location_es: 'Miami, FL',
+    tag: 'bilingual',
+    date: '3 days ago'
+  },
+  {
+    id: 'rev-4',
+    author: 'Daniela S.',
+    rating: 5,
+    text_en: 'Called them for junk car removal in Lehigh Acres. They offered me cash, came with a tow truck the same afternoon, paid me on the spot, and towed it away for free. Easiest deal ever.',
+    text_es: 'Los llamé para retirar mi carro chatarra en Lehigh Acres. Me ofrecieron efectivo, vinieron con una grúa esa misma tarde, me pagaron en el acto y se lo llevaron gratis. El trato más fácil de todos.',
+    location_en: 'Lehigh Acres, FL',
+    location_es: 'Lehigh Acres, FL',
+    tag: 'pricing',
+    date: '2 months ago'
+  },
+  {
+    id: 'rev-5',
+    author: 'Chris Thompson',
+    rating: 5,
+    text_en: 'Excellent response time for battery jump-start in Fort Myers. Price was exactly what we agreed over the phone. No hidden fees or surprises. Highly recommended!',
+    text_es: 'Excelente tiempo de respuesta para encendido de batería en Fort Myers. El precio fue exactamente el acordado por teléfono. Sin tarifas ocultas ni sorpresas. ¡Altamente recomendado!',
+    location_en: 'Fort Myers, FL',
+    location_es: 'Fort Myers, FL',
+    tag: 'speed',
+    date: 'Just yesterday'
+  }
+];
+
+export const SERVICES: Service[] = [
+  {
+    id: 'emergency-towing',
+    title_en: 'Emergency & General Towing',
+    title_es: 'Servicio de Grúa y Emergencias',
+    desc_en: '24/7 flatbed and wheel-lift towing for cars, light trucks, and motorcycles. Available for both local runs and long-distance transport securely.',
+    desc_es: 'Servicio de grúa de plataforma y arrastre las 24 horas para carros, camionetas y motos. Disponible para traslados locales y de larga distancia de forma segura.',
+    time_en: 'Avg. Arrival: 15-25 minutes',
+    time_es: 'Llegada prom: 15-25 minutos',
+    features_en: ['Flatbed Towing for maximum car protection', 'Local and Long Distance Transport', 'Accident Towing & Recovery Assistance', 'Fully Licensed & Insured Crew'],
+    features_es: ['Grúas de plataforma para máxima protección', 'Transporte local y de larga distancia', 'Asistencia en accidentes y recuperación', 'Equipo totalmente asegurado y certificado'],
+    iconName: 'Truck'
+  },
+  {
+    id: 'equipment-transport',
+    title_en: 'Heavy Equipment Transport',
+    title_es: 'Transporte de Equipos Pesados',
+    desc_en: 'Specialized flatbed hauling for heavy industrial machinery, forklifts, skid steers, scissor lifts, and commercial equipment throughout Florida.',
+    desc_es: 'Transporte especializado en plataforma para maquinaria industrial, montacargas, minicargadores, plataformas de tijera y equipos comerciales.',
+    time_en: 'Scheduled or Same-Day Transport',
+    time_es: 'Transporte programado o el mismo día',
+    features_en: ['Skid Steers & Excavator Transport', 'Forklift & Agricultural Equipment Hauling', 'Heavy Duty Loading Ramps & Chains', 'Commercial Account Priority Scheduling'],
+    features_es: ['Transporte de minicargadores y excavadoras', 'Traslado de montacargas y maquinaria agrícola', 'Rampas de carga de alta resistencia', 'Prioridad para cuentas comerciales de flota'],
+    iconName: 'ShieldCheck'
+  },
+  {
+    id: 'junk-car-buyers',
+    title_en: 'Cash for Junk Cars',
+    title_es: 'Efectivo por Carros Chatarra',
+    desc_en: 'Turn your unwanted, old, damaged, or broken down vehicle into cash. We buy junk cars fast, provide on-the-spot payment, and offer free towing extraction.',
+    desc_es: 'Convierta su vehículo viejo, dañado, chatarra o roto en dinero en efectivo. Compramos autos chatarra rápidamente, pagamos en el acto y ofrecemos remolque gratis.',
+    time_en: 'Offers made in 5 mins. Free pickup same day',
+    time_es: 'Ofertas en 5 mins. Entrega gratis el mismo día',
+    features_en: ['Top Cash Payout guaranteed', 'Free Towing & Car Scrap Removal', 'We buy vehicles in any mechanical condition', 'No-stress title transfer paperwork support'],
+    features_es: ['Pago máximo de efectivo garantizado', 'Remolque gratis extracción incluida', 'Comparamos autos en cualquier estado mecánico', 'Asesoría para traspaso de título sin estrés'],
+    iconName: 'DollarSign'
+  },
+  {
+    id: 'roadside-assistance',
+    title_en: '24/7 Roadside Assistance',
+    title_es: 'Asistencia en Carretera 24/7',
+    desc_en: 'Fast emergency relief when you are stuck. Professional lockout service, dead battery jump starts, flat tire changes, and emergency fuel delivery directly to you.',
+    desc_es: 'Alivio rápido de emergencia cuando se queda varado. Apertura de puertas, paso de corriente de batería, cambio de llanta pinchada y entrega de gasolina en el lugar.',
+    time_en: 'Avg. Arrival: 15-20 minutes',
+    time_es: 'Llegada prom: 15-20 minutos',
+    features_en: ['Dead Battery Jump Start', 'Flat Tire Spare Replacement', 'Professional Vehicle Lockout Dispatch', 'Emergency Fuel Deliveries'],
+    features_es: ['Paso de corriente para batería muerta', 'Instalación de repuesto de llanta pinchada', 'Servicio profesional de cerrajería vial', 'Entrega de combustible de emergencia'],
+    iconName: 'Wrench'
+  }
+];
+
+export const REGIONS: RegionSEO[] = [
+  {
+    id: 'lehigh-acres',
+    name: 'Lehigh Acres',
+    title_en: 'Fast 24/7 Towing Services in Lehigh Acres, FL',
+    title_es: 'Servicio de Grúas Rápido 24/7 en Lehigh Acres, FL',
+    desc_en: 'Stuck in Lehigh Acres? Elite Towing provides prompt, budget-friendly flatbed towing and roadside assistance 24 hours a day. Whether you are off Lee Blvd, Joel Blvd, or Gunnery Rd, our tow trucks are stationed nearby to assist you immediately.',
+    desc_es: '¿Varado en Lehigh Acres? Elite Towing ofrece remolques de plataforma rápidos y económicos junto con asistencia vial las 24 horas del día. Ya sea que esté en Lee Blvd, Joel Blvd o Gunnery Rd, nuestras grúas están listas para ayudarle de inmediato.',
+    landmarks_en: ['Lee Boulevard', 'Joel Blvd Shopping Centers', 'Lehigh Acres Public Library Area', 'Majestic Golf Club'],
+    landmarks_es: ['Lee Boulevard Corridor', 'Centros comerciales de Joel Blvd', 'Biblioteca pública de Lehigh Acres', 'Majestic Golf Club'],
+    zipCodes: ['33936', '33971', '33972', '33973', '33974', '33976'],
+    dispatchTime_en: '10 - 15 minutes',
+    dispatchTime_es: '10 - 15 minutos',
+    customFaq_en: [
+      { q: 'How fast can you arrive on Lee Blvd?', a: 'Because we keep trucks stationed dynamically on the main corridors of Lehigh Acres, we can typically arrive at any location on Lee Blvd in 10 to 15 minutes.' },
+      { q: 'What parts of Lehigh Acres do you cover?', a: 'Every corner! We cover all rural residential grid canals, central town centers, and connections to State Road 82.' }
+    ],
+    customFaq_es: [
+      { q: '¿Qué tan rápido llegan a Lee Blvd?', a: 'Como mantenemos grúas distribuidas de forma dinámica en las principales vías de Lehigh Acres, el tiempo de llegada es típicamente de 10 a 15 minutos.' },
+      { q: '¿Qué zonas de Lehigh Acres cubren?', a: '¡Todas! Desde los canales residenciales rurales hasta el centro de la ciudad y las conexiones con la State Road 82.' }
+    ]
+  },
+  {
+    id: 'cape-coral',
+    name: 'Cape Coral',
+    title_en: 'Professional Tow Truck Service in Cape Coral, FL',
+    title_es: 'Servicios de Grúa Profesional en Cape Coral, FL',
+    desc_en: 'Navigating Cape Coral’s vast network of canals and bridges can be tricky, but Elite Towing makes getting emergency towing effortless. We service Cape Coral Pkwy, Del Prado Blvd, Pine Island Rd, and all northern residential areas. 24/7 dispatched flatbeds are just a phone call away.',
+    desc_es: 'Navegar por la red de canales y puentes de Cape Coral puede ser un reto, pero Elite Towing hace que conseguir ayuda sea sencillísimo. Cubrimos Cape Coral Pkwy, Del Prado Blvd, Pine Island Rd y todas las áreas del norte. Grúas las 24 horas a un paso de usted.',
+    landmarks_en: ['Del Prado Boulevard', 'Cape Coral Parkway', 'Midpoint Bridge Connection', 'Yacht Club Community Park'],
+    landmarks_es: ['Del Prado Boulevard Corridor', 'Cape Coral Parkway', 'Acceso al Puente Midpoint', 'Parque Comunitario Yacht Club'],
+    zipCodes: ['33904', '33909', '33914', '33990', '33991', '33993'],
+    dispatchTime_en: '15 - 20 minutes',
+    dispatchTime_es: '15 - 20 minutos',
+    customFaq_en: [
+      { q: 'Are your trucks capable of pulling low cars from canal bridges?', a: 'Absolutely, our premium flatbed operators are expert towing technicians trained to load vehicles with low ground clearance without causing bumper scratches.' },
+      { q: 'Do you cover both East and West Cape Coral?', a: 'Yes! We actively serve all of North Cape, Southwest Cape near Chiquita, and Southeast grids near Del Prado.' }
+    ],
+    customFaq_es: [
+      { q: '¿Tienen grúas para autos bajos en zonas estrechas?', a: 'Por supuesto, nuestros operadores expertos de plataforma están capacitados para cargar con total seguridad vehículos bajos sin dañar parachoques.' },
+      { q: '¿Cubren toda la región de Cape Coral?', a: 'Sí, patrullamos todo el norte de Cape Coral, el suroeste cerca de Chiquita Blvd y el sureste.' }
+    ]
+  },
+  {
+    id: 'fort-myers',
+    name: 'Fort Myers',
+    title_en: 'Premier Towing Service in Fort Myers, FL',
+    title_es: 'El Mejor Servicio de Grúas en Fort Myers, FL',
+    desc_en: 'Elite Towing offers top-tier, fast towing near Fort Myers Beach, downtown River District, Cleveland Ave (US-41), and I-75. Our local family business delivers transparent rates with zero surprise charges. Keep our number on your speed dial for emergencies.',
+    desc_es: 'Elite Towing ofrece servicio rápido de grúas cerca de Fort Myers Beach, el distrito del río (Downtown), Cleveland Ave (US-41) e I-75. Nuestro negocio familiar garantiza tarifas transparentes sin cargos ocultos. Agende nuestro número.',
+    landmarks_en: ['Cleveland Avenue (US-41)', 'I-75 Fort Myers Segments', 'Fort Myers River District', 'Edison Mall District'],
+    landmarks_es: ['Cleveland Avenue (US-41)', 'Tramo I-75 en Fort Myers', 'Distrito Histórico del Río', 'Zona Comercial Central del Edison Mall'],
+    zipCodes: ['33901', '33905', '33907', '33908', '33912', '33916', '33919', '33966'],
+    dispatchTime_en: '12 - 18 minutes',
+    dispatchTime_es: '12 - 18 minutos',
+    customFaq_en: [
+      { q: 'What is your response time near Fort Myers Beach or US-41?', a: 'Due to dense traffic at peak hours, our average response is 15 minutes, but we maintain local drivers right off US-41 to speed up response times.' },
+      { q: 'Can you tow directly to a local mechanic of my choice?', a: 'Yes. We will tow your vehicle directly to any repair shop, dealership, or residential address of your choice.' }
+    ],
+    customFaq_es: [
+      { q: 'What is your response time near Fort Myers Beach or US-41?', a: 'Nuestros tiempos de llegada rondan de 12 a 18 minutos. Mantenemos grúas fijas cerca de Cleveland Ave (US-41) para evitar retrasos por tráfico.' },
+      { q: '¿Pueden remolcar mi auto a mi taller de confianza?', a: 'Sí. Remolcamos su vehículo al taller mecánico, concesionaria o dirección residencial que usted prefiera.' }
+    ]
+  },
+  {
+    id: 'miami-dade',
+    name: 'Miami-Dade County',
+    title_en: '24/7 Roadside & Towing in Miami-Dade County, FL',
+    title_es: 'Grúas y Auxilio Mecánico 24h en Miami-Dade, FL',
+    desc_en: 'Serving the vibrant Miami-Dade metropolitan region with professional flatbeds and heavy equipment transport. Elite Towing covers everything from Kendall, Hialeah, Doral, and Downtown Miami, to highway recovery on I-95, Palmetto Expressway (SR-826), and FL Turnpike.',
+    desc_es: 'Servimos a toda el área metropolitana de Miami-Dade con grúas profesionales de plataforma y transporte pesado. Brindamos auxilio en Kendall, Hialeah, Doral, Downtown Miami, así como rescates rápidos en la I-95, el Palmetto (SR-826) y el Florida Turnpike.',
+    landmarks_en: ['Palmetto Expressway (SR-826)', 'I-95 Highway Corridor', 'Doral & Kendall Commercial Zones', 'Miami International Airport Vicinity'],
+    landmarks_es: ['Palmetto Expressway (SR-826)', 'Autopista interestatal I-95', 'Zonificación comercial de Doral y Kendall', 'Inmediaciones del Aeropuerto de Miami'],
+    zipCodes: ['33101', '33122', '33166', '33172', '33175', '33186', '33010', '33012'],
+    dispatchTime_en: '20 - 30 minutes',
+    dispatchTime_es: '20 - 30 minutos',
+    customFaq_en: [
+      { q: 'Do you offer emergency towing on busy Miami expressways?', a: 'Yes, our operators are highly certified for rapid response highway towing under strict Florida DOT safety guidelines.' },
+      { q: 'Do your drivers speak Spanish in Miami?', a: 'Yes! Our dispatch center and road crews are 100% bilingual. Call us in Spanish at any hour.' }
+    ],
+    customFaq_es: [
+      { q: '¿Realizan rescates en el Palmetto o la I-95?', a: 'Sí, todos nuestros operadores cuentan con certificación y equipamiento de seguridad vial para operar en autopistas de alta velocidad.' },
+      { q: '¿El personal en Miami habla español?', a: '¡Por supuesto! Todo nuestro equipo de atención telefónica y operadores de grúa son 100% bilingües en inglés y español.' }
+    ]
+  },
+  {
+    id: 'broward',
+    name: 'Broward County',
+    title_en: 'Rapid Dispatch Towing in Broward County, FL',
+    title_es: 'Despacho de Grúas Express en el Condado de Broward, FL',
+    desc_en: 'Stuck in Fort Lauderdale, Pembroke Pines, Hollywood, Miramar, or Pompano Beach? Elite Towing provides superior towing solutions with flatbeds ready for swift emergency dispatch on I-75, I-595, and Sawgrass Expressway 24/7.',
+    desc_es: '¿Varado en Fort Lauderdale, Pembroke Pines, Hollywood, Miramar o Pompano Beach? Elite Towing proporciona respuestas de remolque inmediatas con grúas de plataforma alertas las 24 horas en la I-75, la I-595 y el Sawgrass Expressway.',
+    landmarks_en: ['I-595 Freeway Junction', 'Pembroke Pines Residential Belts', 'Fort Lauderdale Downtown', 'Sawgrass Expressway'],
+    landmarks_es: ['Enlace vial de la I-595', 'Zonas residenciales de Pembroke Pines', 'Centro de Fort Lauderdale', 'Sawgrass Expressway'],
+    zipCodes: ['33301', '33312', '33024', '33025', '33027', '33023', '33009', '33060'],
+    dispatchTime_en: '18 - 25 minutes',
+    dispatchTime_es: '18 - 25 minutos',
+    customFaq_en: [
+      { q: 'What response time can I expect in Pembroke Pines or Fort Lauderdale?', a: 'Our dispatch layout allows us to put a tow truck at your bumper in 18 to 25 minutes for standard callouts.' },
+      { q: 'Can you transport multiple vehicles or low clearance cars in Hollywood?', a: 'Yes, our fleet has modern soft-strap loaders specifically suited for luxury, classic, and lower-sport vehicles.' }
+    ],
+    customFaq_es: [
+      { q: '¿Cuánto demoran en llegar a Fort Lauderdale o Pembroke Pines?', a: 'Nuestra red de respuesta nos permite posicionar una grúa en su ubicación en un promedio de 18 a 25 minutos.' },
+      { q: '¿Remolcan carros deportivos o modificados en Hollywood?', a: 'Sí, disponemos de correas de amarre suave de alta gama y rampas rebajadas especiales para no alterar faldones ni piezas de colección.' }
+    ]
+  }
+];
+
+export const FAQS: FAQItem[] = [
+  {
+    id: 'faq-1',
+    category: 'pricing',
+    question_en: 'How much does towing cost in South Florida?',
+    question_es: '¿Cuánto cuesta el servicio de remolque en el sur de Florida?',
+    answer_en: 'Pricing depends on the distance, service type (flatbed or wheel-lift), and specific vehicle size. Elite Towing offers fair, flat-rate base pricing plus a transparent hook-up fee. No hidden fees ever! Call us or use our Online Quote Tool for an instant estimate.',
+    answer_es: 'El costo promedio varía según la distancia, el tipo de servicio (plataforma o arrastre) y el peso del auto. Elite Towing cobra una tarifa base justa más millas reales, sin recargos sorpresa. Contáctenos para recibir cotización digital al instante.'
+  },
+  {
+    id: 'faq-2',
+    category: 'general',
+    question_en: 'Are you available during holidays and late nights?',
+    question_es: '¿Disponen de grúas durante días festivos y altas horas de la noche?',
+    answer_en: 'Yes, we operate 24 hours a day, 365 days a year. Our dispatch office is always open, even on Christmas, Thanksgiving, and New Year’s Eve, ensuring South Florida drivers are never left stranded.',
+    answer_es: 'Sí, operamos 24/7, los 365 días del año. Nuestra oficina de despacho está permanentemente abierta, incluidos todos los feriados federales y estatales.'
+  },
+  {
+    id: 'faq-3',
+    category: 'junk_cars',
+    question_en: 'How do you buy junk cars? What documents are required?',
+    question_es: '¿Cómo compran autos chatarra? ¿Qué documentos necesito?',
+    answer_en: 'To sell your junk vehicle, you must prove ownership (preferably with a clean title). We make you an instant cash offer, dispatch a free flatbed to tow the old vehicle, pay you cash in hand, and assist with legal DMV title transfer paperwork immediately.',
+    answer_es: 'Para vender su vehículo chatarra preferiblemente requerimos el título del carro para un traspaso legal rápido. Hacemos la valoración gratis, le pagamos en efectivo en el acto y realizamos el remolque gratis sin costo de extracción.'
+  },
+  {
+    id: 'faq-4',
+    category: 'general',
+    question_en: 'Do you speak Spanish?',
+    question_es: '¿Hablan español?',
+    answer_en: 'Yes! "Se habla español." Our phone agents, dispatch coordinators, and field tow truck drivers are 100% bilingual, ensuring clear communication when you need emergency assistance.',
+    answer_es: '¡Sí! Todo nuestro equipo es bilingüe en inglés y español. Su llamada y coordinación de despacho se atenderán de manera óptima en el idioma que prefiera.'
+  },
+  {
+    id: 'faq-5',
+    category: 'areas',
+    question_en: 'Will you tow my vehicle long distance across counties?',
+    question_es: '¿Hacen traslados de larga distancia entre condados?',
+    answer_en: 'Yes. We regularly transport vehicles, SUVs, construction lifts, and trucks across Lee, Broward, and Miami-Dade counties, as well as state-wide shipping across Florida if requested.',
+    answer_es: 'Sí. Remolcamos todo tipo de autos, SUVs y maquinarias entre condados (Lee, Broward, Miami-Dade) e incluso envíos a lo largo de todo el estado de Florida.'
+  }
+];
+
+export const TRANS = {
+  en: {
+    nav_phone: 'Call 24/7 Dispatcher',
+    nav_open: '● DISPATCH ACTIVE 24/7',
+    tagline: 'Reliable South Florida Towing',
+    hero_title_part1: '24/7 Fast & Reliable',
+    hero_title_part2: 'Towing Services in South Florida',
+    hero_sub: 'Stuck on the road? We dispatch immediately, offer flat upfront transparent costs, and treat your vehicle with total professional care.',
+    badge_247: '24/7 Dispatch',
+    badge_rated: '4.9★ Google Rating',
+    badge_bilingual: 'Se Habla Español',
+    badge_speed: '15-Minute Avg. Arrival',
+    cta_call_now: 'CALL NOW — FAST SERVICE',
+    cta_get_quote: 'Get Quote on WhatsApp',
+    why_title: 'Why Drivers Trust Elite Towing',
+    why_sub: 'With years of local service, our goal is to turn highly stressful emergency situations into a polite, efficient, and damage-free experience.',
+    why1_title: 'Speed Dispatchers',
+    why1_desc: 'We know road emergencies are dangerous. We maintain multiple tow trucks stationed around South Florida to reach you instantly.',
+    why2_title: 'Transparent Pricing',
+    why2_desc: 'No sneaky miles count or surprise hook-up surtaxes. We quote you a clear flat rate before our flatbed driver departs.',
+    why3_title: 'Extreme Care & Quality',
+    why3_desc: 'Your vehicle is treated as our own. We use nylon soft-strap tie-downs and top-tier flatbeds to protect your suspension.',
+    why4_title: '100% Bilingual Service',
+    why4_desc: 'La llamada de emergencia se atiende en español o inglés sin fricciones. Ofrecemos comunicación fluida para su paz mental.',
+    services_title: 'Our Specialist Services',
+    services_sub: 'Comprehensive automotive transportation services customized to keep you moving securely.',
+    emergency_cta: 'Request Tow',
+    reviews_title: 'Trusted by Drivers Across South Florida',
+    reviews_sub: 'Check real feedback from local people who got back on the road safely with our team.',
+    revs_btn: 'View All Reviews',
+    areas_title: 'Areas We Serve in South Florida',
+    areas_sub: 'Our local hubs enable elite coverage across South Florida counties.',
+    about_title: 'A Local Family-Owned Towing Company You Can Trust',
+    about_text1: 'At Elite Towing & Logistics, we was founded with one primary mission: treating stranded Florida drivers like our own family members. When your car breaks down, your battery dies, or you have an accident, you are vulnerable. We pride ourselves on transparent pricing, polite technicians, and speed.',
+    about_text2: 'Led by Leonardo and our family crew, we have expanded to cover Fort Myers, Cape Coral, Lehigh Acres, Miami-Dade, and Broward. Every single driver is heavily vetted, drug-tested, and trained in modern recovery mechanics.',
+    owner_badge: 'Founder & Head of Dispatch',
+    final_title: 'Need a Tow Truck Right Now?',
+    final_subtitle: 'Our certified dispatch operators are standing by. Tap to call or message us for an instant quote.',
+    final_phone_cta: 'CALL (786) 910-7239',
+    faq_title: 'Frequently Answered Questions',
+    faq_sub: 'Get expert answers to common concerns about flatbed towing, costs, and cash for scrap cars.',
+    footer_hours: 'Service Hours',
+    footer_hours_val: 'Open 24 Hours / 7 Days a week',
+    all_rights: 'All rights reserved.',
+    home: 'Home',
+    services: 'Services',
+    areas: 'Service Areas',
+    reviews: 'Reviews',
+    faq_lbl: 'FAQs',
+    seo_landmarks: 'Local Search Identifiers',
+    seo_zipcodes: 'Active ZIP Codes Served',
+    seo_dispatch_title: 'Local Dispatch Proximity',
+    seo_map_title: 'South Florida Interactive Dispatch Centers',
+    selector_lbl: 'Select a location to view custom local rates and details:',
+    quick_calc_title: 'Instant Online Quote Estimate',
+    quick_calc_sub: 'Know your pricing upfront. Calculate a customized, honest rate range in seconds.',
+    form_pickup: 'Pickup Area / City',
+    form_dropoff: 'Destination Area / City',
+    form_vehicle: 'Vehicle Type / Size',
+    form_issue: 'Towing Scenario / Issue',
+    calc_btn: 'Calculate Fair Estimate',
+    calc_distance: 'Estimated Distance',
+    calc_arrival: 'Estimated Arrival Near You',
+    calc_price: 'Estimated Tow Rate',
+    calc_lock: 'Lock-in This Price Over Call',
+    calc_whatsapp: 'Send Quote range on WhatsApp',
+    junk_title: 'Sell Your Junk Car for Cash',
+    junk_sub: 'Have an old, damaged, or junk vehicle? Send us the details and we will reply instantly with a custom cash offer.',
+    junk_make: 'Vehicle Make (e.g., Honda)',
+    junk_model: 'Model & Year (e.g., Civic 2010)',
+    junk_condition: 'Mechanical Condition',
+    junk_title_status: 'Do you have the Title?',
+    junk_get_offer: 'Send Details to Owner',
+    junk_offer_title: 'Vehicle Details Ready',
+    junk_countdown: 'Response time',
+    junk_accept_btn: 'Send Details via WhatsApp',
+    field_select: 'Select target...',
+    title_yes: 'Yes, Clean Title',
+    title_no: 'No Title (Salvage/Parts Only)'
+  },
+  es: {
+    nav_phone: 'Llamar Despachador 24/7',
+    nav_open: '● DESPACHO ACTIVO 24/7',
+    tagline: 'Remolque Rápido en el Sur de Florida',
+    hero_title_part1: 'Servicio de Grúas Rápido 24/7 y Confiable',
+    hero_title_part2: 'en el Sur de Florida',
+    hero_sub: '¿Varado en la carretera? Despachamos grúas al instante, ofrecemos tarifas claras garantizadas y cuidamos tu vehículo con grúas de plataforma premium.',
+    badge_247: 'Despacho 24h',
+    badge_rated: '4.9★ Calificación Google',
+    badge_bilingual: 'Se Habla Español',
+    badge_speed: 'Llegada Promedio de 15 Minutos',
+    cta_call_now: 'LLAMAR AHORA — SERVICIO RÁPIDO',
+    cta_get_quote: 'Cotizar por WhatsApp',
+    why_title: 'Por Qué los Conductores Confían en Elite Towing',
+    why_sub: 'Llevamos años sirviendo a nuestra comunidad local, transformando momentos de peligro en carretera en experiencias tranquilas, amables y seguras.',
+    why1_title: 'Despacho de Grúa Veloz',
+    why1_desc: 'El tráfico y quedarse a un lado del autopista es peligroso. Mantenemos grúas listas en zonas críticas para llegar en tiempo récord.',
+    why2_title: 'Tarifas Claras y Sin Sorpresas',
+    why2_desc: 'Sin cobros camuflados de combustible o recargos fantasma. Conoce tu precio por teléfono antes de que salga la grúa flatbed.',
+    why3_title: 'Máximo Cuidado de su Vehículo',
+    why3_desc: 'Tratamos tu auto como si fuera el nuestro. Usamos correas de seguridad de nylon suave para proteger la alineación del vehículo.',
+    why4_title: 'Servicio 100% en Español',
+    why4_desc: 'La comunicación rápida en emergencias evita demoras catastróficas. Nos comunicamos fluidamente en tu idioma natal.',
+    services_title: 'Nuestros Servicios de Especialidad',
+    services_sub: 'Transporte automotriz y de maquinaria pesada adaptados para mantener su tranquilidad al mejor costo.',
+    emergency_cta: 'Solicitar Grúa',
+    reviews_title: 'La Confianza de Miles de Conductores Locales',
+    reviews_sub: 'Verifique opiniones reales de clientes que recibieron apoyo mecánico rápido en su comunidad.',
+    revs_btn: 'Ver Más Reseñas',
+    areas_title: 'Áreas de Servicio en el Sur de Florida',
+    areas_sub: 'Cobertura impecable en los condados de Lee, Miami-Dade y Broward.',
+    about_title: 'Un Negocio Familiar de Grúas en el que Puede Confiar',
+    about_text1: 'En Elite Towing & Logistics, nacimos con una premisa clara: tratar a los conductores varados exactamente como nos gustaría que tratasen a nuestra propia familia. Sabemos que una avería interrumpe sus planes y puede ser peligrosa; por ello priorizamos el respeto, la velocidad y la honestidad radical.',
+    about_text2: 'Bajo la coordinación de Leonardo y nuestro equipo, operamos una moderna flota de grúas en Fort Myers, Cape Coral, Lehigh Acres, Miami-Dade y Broward. Todos nuestros operadores pasan por rigurosas pruebas de seguridad vial.',
+    owner_badge: 'Fundador y Director de Despacho',
+    final_title: '¿Necesita una Grúa Ahora Mismo?',
+    final_subtitle: 'Nuestros despachadores están comunicados. Haga clic en llamar o envíe un mensaje de texto para salida inmediata.',
+    final_phone_cta: 'LLAME AL (786) 910-7239',
+    faq_title: 'Preguntas Frecuentes de Clientes',
+    faq_sub: 'Respuestas profesionales sobre costos de remolques, venta de autos chatarra y tiempos de arribo.',
+    footer_hours: 'Horarios de Atención',
+    footer_hours_val: 'Abierto las 24 Horas / 7 Días a la semana',
+    all_rights: 'Todos los derechos reservados.',
+    home: 'Inicio',
+    services: 'Servicios',
+    areas: 'Zonas de Servicio',
+    reviews: 'Reseñas',
+    faq_lbl: 'Preguntas',
+    seo_landmarks: 'Puntos de Referencia Locales',
+    seo_zipcodes: 'Códigos postales cubiertos',
+    seo_dispatch_title: 'Cercanía de Despachador',
+    seo_map_title: 'Centros de Despacho en el Sur de Florida',
+    selector_lbl: 'Seleccione una ubicación para ver tarifas locales personalizadas:',
+    quick_calc_title: 'Cotizador de Tarifas Online en Vivo',
+    quick_calc_sub: 'Olvídese del misterio. Obtenga una estimación de precio transparente en segundos.',
+    form_pickup: 'Área / Ciudad de Recogida',
+    form_dropoff: 'Área / Ciudad de Destino',
+    form_vehicle: 'Diseño / Tamaño de Coche',
+    form_issue: 'Falla o Tipo de Servicio',
+    calc_btn: 'Calcular Tarifa Estimada',
+    calc_distance: 'Distancia Estimada',
+    calc_arrival: 'Llegada Promedio en tu Zona',
+    calc_price: 'Estimado de Servicio',
+    calc_lock: 'Llamar para Reservar esta Tarifa',
+    calc_whatsapp: 'Enviar mi cotización por WhatsApp',
+    junk_title: 'Compramos Autos Viejos para Chatarra',
+    junk_sub: '¿Tiene un auto viejo, roto o para chatarra? Envíenos los detalles y le responderemos de inmediato con una oferta de efectivo personalizada.',
+    junk_make: 'Marca del Vehículo (ej., Toyota)',
+    junk_model: 'Modelo y Año (ej., Corolla 2008)',
+    junk_condition: 'Condición Mecánica',
+    junk_title_status: '¿Cuenta con el Título del Auto?',
+    junk_get_offer: 'Enviar Detalles al Dueño',
+    junk_offer_title: 'Detalles del Auto Listos',
+    junk_countdown: 'Tiempo de respuesta estimado',
+    junk_accept_btn: 'Enviar Detalles por WhatsApp',
+    field_select: 'Seleccione opción...',
+    title_yes: 'Sí, Título Limpio en Mano',
+    title_no: 'Sin Título (Repuestos / Chatarra)'
+  }
+};
